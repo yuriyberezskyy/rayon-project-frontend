@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from  "react-router-dom";
+import {Link,Redirect} from  "react-router-dom";
 import styled from 'styled-components'
 import SideNavbar from '../MainContainer/SideNavbar'
-import { Icon } from 'semantic-ui-react'
+import { Icon,Button } from 'semantic-ui-react'
 
 
 const MyNavBar = styled.nav`
@@ -41,27 +41,32 @@ const MyNavBar = styled.nav`
 
 
 export class Navbar extends Component {
+
     render() {
         return (
+            <div>
             <MyNavBar>
-            
-            <div className="logo">Rayon</div>
-
+            <div className="logo">Raйon</div>
             <ul className="nav-links">
                 <li>
-                    <Link to="/" className="link"><Icon name='home' size='large' /></Link>
+                   {localStorage.getItem("token") ? <Link to="/" className="link"><Icon name='home' size='large' /></Link>:""}
                 </li>
                 <li>
-                    <Link to="/cart" className='link'><Icon name='shopping cart' size='large' /></Link>
+                   {localStorage.getItem("token") ? <Link to="/cart" className='link'><Icon name='shopping cart' size='large' /></Link>:""}
                 </li>
+                 <li>
+                   {localStorage.getItem("token") ? <Link to="/myorders" className='link'><Icon name='ordered list' size='large' /></Link>:""}
+                </li>  
+
                 <li>
-                    <Link to="/login" className="link"><Icon name='user' size='large' /></Link>
+                    {localStorage.getItem("token") ? <Button onClick={()=>this.props.logOutClick()} inverted color='black'>Log Out</Button> : <Link to="/login" className='link'><Icon name='user' size='large' /></Link>}  
                 </li>
             </ul>
             </MyNavBar>
+            </div>
         )
     }
 }
 
 
-export default Navbar
+export default Navbar;

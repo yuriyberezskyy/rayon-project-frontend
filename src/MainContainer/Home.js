@@ -24,10 +24,11 @@ componentDidMount() {
 
     
     render() {
+       
         return (
             <div>
                 <SideNavbarStyle>
-                  <AllClothings  clothings = {this.state.clothings} />
+                  <AllClothings grabForCart={this.props.grabForCart} clothings = {this.state.clothings} />
                 </SideNavbarStyle>
             </div>
         )

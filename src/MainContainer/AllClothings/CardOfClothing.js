@@ -1,5 +1,17 @@
 import React, { Component } from 'react'
 import { Card, Icon, Image,Button } from 'semantic-ui-react'
+import styled from 'styled-components'
+
+
+// let styledCards = styled.div`
+//     &:hover{
+//        .card-image{
+//           -ms-transform: scale(1.5) !important;
+//           -webkit-transform: scale(1.5) !imporatant;
+//           transform: scale(1.5) !important; 
+//         }
+//     }
+// `
 
 
 export default class CardOfClothing extends Component {
@@ -32,8 +44,9 @@ export default class CardOfClothing extends Component {
         let parsedObject = JSON.parse(noParsedObject)
         console.log(parsedObject)
         return (
+             
                 <Card style={{height: "30rem",weidth: "20rem",marginLeft:"50px"}}> 
-                  <Image style={{}} src={this.props.clothing.picture} wrapped ui={true} />
+                  <Image className="card-image" src={this.props.clothing.picture} wrapped ui={true} />
                 
                   <Card.Content>
                   <Card.Header>{this.props.clothing.name}</Card.Header>
@@ -47,7 +60,8 @@ export default class CardOfClothing extends Component {
                   <Button onClick = {()=>this.clickedClothing()} animated='vertical'>
                     {this.state.isClicked?<Button.Content >In your Cart</Button.Content>:<Button.Content ><Icon name='shop' /></Button.Content>}
                    </Button>
-                </Card>    
+                </Card>
+                  
         )
     }
 }

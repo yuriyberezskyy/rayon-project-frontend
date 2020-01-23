@@ -8,12 +8,19 @@ export default class AllOrders extends Component {
    }
 
     componentDidMount(){
-        fetch(`http://localhost:3000/orders`) //eslint-disable-line
+        fetch(`http://localhost:3000/orders`,{headers:{
+            "Authorization": localStorage.getItem("token")
+        }}) //eslint-disable-line
           .then(response => response.json())
-          .then(element=>this.setState({orders:element}))
+          .then(elements=>{
+              let nop = localStorage.getItem("loggedInUserId")
+              let loggedInUserId = JSON.parse(nop)
+             let filteredElements = elements.filter((element)=>element.user.id===loggedInUserId)
+               this.setState({orders:filteredElements})
+          })
+      
     }
     render() {
-        console.log(this.state.orders !== [])
         if(this.state.orders){
         return (
             <div style={{paddingTop:"40px",marginLeft:"400px"}}>

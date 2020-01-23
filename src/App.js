@@ -21,7 +21,7 @@ state = {
    logOutClick = () => {
     localStorage.removeItem("loggedInUserId")
     localStorage.removeItem("token")
-
+    localStorage.removeItem("savedData")
     this.setState({
       loggedInUserId: null,
       token: null

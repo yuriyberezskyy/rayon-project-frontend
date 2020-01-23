@@ -4,17 +4,8 @@ import { Header, Image, Table, Divider,Button,Input,Sticky } from 'semantic-ui-r
 import { element } from 'prop-types'
 import styled from 'styled-components'
 import NumericInput from 'react-numeric-input';
-const styledQuantity = styled.div`
-    .quantity 
-    {
-        display: flex !important;
-    }
 
-    .quantity-button
-    {
-        height: 100px !important;
-    }
-`
+
 export default class Cart extends Component {
     
     state = {
@@ -28,7 +19,6 @@ export default class Cart extends Component {
 
 
     handleDelete = (clothing) =>{
-        console.log(clothing)
        let noParsed = localStorage.getItem("savedData")
        let parsedItem = JSON.parse(noParsed)
        const filtered = parsedItem.filter((otherClothing)=>otherClothing.id !== clothing.id)

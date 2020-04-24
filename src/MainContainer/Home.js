@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AllClothings from './AllClothings/AllClothings';
-import SideNavbar from './SideNavbar';
 import styled from 'styled-components';
 
 const SideNavbarStyle = styled.div`
@@ -15,7 +14,7 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://localhost:3000/clothings`) //eslint-disable-line
+    fetch(`http://localhost:3000/clothings`)
       .then(response => response.json())
       .then(data => this.setState({ clothings: data }));
   }

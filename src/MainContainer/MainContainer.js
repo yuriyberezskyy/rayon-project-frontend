@@ -9,18 +9,7 @@ export default class MainContainer extends Component {
     token: null,
   };
 
-  // setToken = ({ token }) => {
-  //   // localStorage.token = token;
-  //   // localStorage.loggedInUserId = loggedInUserId;
-  //   console.log('HELLO', token);
-  //   // this.setState({
-  //   //   token: token,
-  //   //   loggedInUserId: loggedInUserId
-  //   // })
-  // };
   render() {
-    console.log(this.setToken);
-
     return (
       <div>
         <Home />

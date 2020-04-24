@@ -10,7 +10,6 @@ export default class Signup extends Component {
   handleSubmit = e => {
     e.preventDefault();
     fetch(`http://localhost:3000/signup`, {
-      //eslint-disable-line
       method: 'POST',
       headers: {
         'content-type': 'application/json',

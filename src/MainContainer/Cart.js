@@ -1,16 +1,5 @@
-import React, { Component, QuantityPicker } from 'react';
-import CartElement from './CartElement';
-import {
-  Header,
-  Image,
-  Table,
-  Divider,
-  Button,
-  Input,
-  Sticky,
-} from 'semantic-ui-react';
-import { element } from 'prop-types';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+import { Image, Table, Button } from 'semantic-ui-react';
 import NumericInput from 'react-numeric-input';
 
 export default class Cart extends Component {
@@ -44,7 +33,6 @@ export default class Cart extends Component {
     console.log(parsedItem);
     console.log(loggedInUserId);
     fetch(`http://localhost:3000/orders`, {
-      //eslint-disable-line
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -170,8 +158,4 @@ export default class Cart extends Component {
       );
     }
   }
-}
-
-{
-  /* {this.props.cartClothes.map((clothing)=><CartElement key={clothing.id} clothing={clothing}/>)} */
 }

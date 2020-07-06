@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import { element } from 'prop-types';
-import {
-  Header,
-  Image,
-  Table,
-  Divider,
-  Button,
-  Input,
-  Sticky,
-} from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 export default class AllOrders extends Component {
   state = {
     orders: [],

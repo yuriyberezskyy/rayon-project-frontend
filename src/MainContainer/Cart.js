@@ -29,9 +29,7 @@ export default class Cart extends Component {
   handlePutOrder = (totalAmount, parsedItem) => {
     const noParsedloggedInUserId = localStorage.getItem('loggedInUserId');
     const loggedInUserId = JSON.parse(noParsedloggedInUserId);
-    console.log(totalAmount);
-    console.log(parsedItem);
-    console.log(loggedInUserId);
+
     fetch(`http://localhost:3000/orders`, {
       method: 'POST',
       headers: {
